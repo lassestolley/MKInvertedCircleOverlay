@@ -57,7 +57,7 @@ func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayR
 }
 ```
 
-## Change color and alpha
+## Change color and alpha and with
 
 ```swift
 circle.outColorAlpha = 0.2
