@@ -13,7 +13,7 @@ public class MKInvertedCircleOverlayRenderer: MKOverlayRenderer {
     var strokeWith: CGFloat = 0.0
     
     // Init class
-    init(circle: MKCircle, outColor: UIColor) {
+    public init(circle: MKCircle, outColor: UIColor) {
         self.circle = circle
         self.outColor = outColor
         super.init(overlay: circle)
