@@ -2,7 +2,7 @@
 import UIKit
 import MapKit
 
-class MKInvertedCircleOverlayRenderer: MKOverlayRenderer {
+public class MKInvertedCircleOverlayRenderer: MKOverlayRenderer {
     
     var circle: MKCircle
     var outColor: UIColor
@@ -18,7 +18,7 @@ class MKInvertedCircleOverlayRenderer: MKOverlayRenderer {
         super.init(overlay: circle)
     }
     
-    override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
+    public override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
         let path = UIBezierPath(rect: rect(for: MKMapRect.world))
         let excludePath = UIBezierPath(roundedRect: CGRect(x: circle.coordinate.latitude, y: circle.coordinate.longitude, width: circle.boundingMapRect.size.width, height: circle.boundingMapRect.size.height), cornerRadius: circle.boundingMapRect.size.width)
         context.setFillColor(outColor.withAlphaComponent(outColorAlpha).cgColor)
