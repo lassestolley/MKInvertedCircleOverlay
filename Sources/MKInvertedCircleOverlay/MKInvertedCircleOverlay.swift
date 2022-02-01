@@ -12,12 +12,14 @@ public class MKInvertedCircleOverlayRenderer: MKOverlayRenderer {
     var strokeColorAlpha: CGFloat = 1.0
     var strokeWith: CGFloat = 0.0
     
+    // Init class
     init(circle: MKCircle, outColor: UIColor) {
         self.circle = circle
         self.outColor = outColor
         super.init(overlay: circle)
     }
     
+    // Draw paths
     public override func draw(_ mapRect: MKMapRect, zoomScale: MKZoomScale, in context: CGContext) {
         let path = UIBezierPath(rect: rect(for: MKMapRect.world))
         let excludePath = UIBezierPath(roundedRect: CGRect(x: circle.coordinate.latitude, y: circle.coordinate.longitude, width: circle.boundingMapRect.size.width, height: circle.boundingMapRect.size.height), cornerRadius: circle.boundingMapRect.size.width)
