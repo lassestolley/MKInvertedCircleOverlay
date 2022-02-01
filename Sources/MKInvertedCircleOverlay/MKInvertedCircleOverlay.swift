@@ -7,10 +7,10 @@ public class MKInvertedCircleOverlayRenderer: MKOverlayRenderer {
     var circle: MKCircle
     var outColor: UIColor
     
-    var outColorAlpha: CGFloat = 1.0
-    var strokeColor: UIColor = .clear
-    var strokeColorAlpha: CGFloat = 1.0
-    var strokeWith: CGFloat = 0.0
+    public var outColorAlpha: CGFloat = 1.0
+    public var strokeColor: UIColor = .clear
+    public var strokeColorAlpha: CGFloat = 1.0
+    public var strokeWith: CGFloat = 0.0
     
     // Init class
     public init(circle: MKCircle, outColor: UIColor) {
