@@ -16,7 +16,7 @@ You can install MKInvertedCircleOverlay with the Swift Package Manager.
 ```swift
 let package = Package(
     dependencies: [
-        .package(url: "https://github.com/Technikabo/MKInvertedCircleOverlay.git", from: "1.0.0")
+        .package(url: "https://github.com/lassestolley/MKInvertedCircleOverlay.git", from: "1.0.0")
     ],
 )
 ```
@@ -35,7 +35,7 @@ import MKInvertedCircleOverlay
 @IBOutlet weak var map: MKMapView!
 ```
 
-**3.** Set map delegate in ```viewDidLoad()``` and add ```MKMapViewDelegate```to your ViewController
+**3.** Set map delegate in ```viewDidLoad()``` and add ```MKMapViewDelegate``` to your ViewController
 
 ```swift
 map.delegate = self
@@ -48,19 +48,16 @@ let coordinate = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
 map.addOverlay(MKCircle(center: coordinate, radius: 1500))
 ```
 
-**4.** Add MKOverlayRenderer function
+**4.** Add MKOverlayRenderer function and configure the appearance
 
 ```swift
 func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-    let circle = MKInvertedCircleOverlayRenderer(circle: overlay as! MKCircle, outColor: .darkGray)
+    let circle = MKInvertedCircleOverlayRenderer(circle: overlay as! MKCircle)
+    circle.outColor = .systemBlue
+    circle.outAlpha = 0.5
+    circle.strokeColor = .systemRed
+    circle.strokeAlpha = 1.0
+    circle.strokeWidth = 10.0
     return circle
 }
-```
-
-## Change color and alpha and with
-
-```swift
-circle.outColorAlpha = 0.2
-circle.strokeColorAlpha = 1.0
-circle.strokeWith = 10.0
 ```
